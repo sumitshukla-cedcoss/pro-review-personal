@@ -257,6 +257,9 @@ class Proreview {
 		$this->loader->add_action( 'mwb_show_filtered_attr', $p_plugin_public, 'apply_filter_action' );
 
 		$this->loader->add_filter( 'woocommerce_reviews_title', $p_plugin_public, 'mwb_change_text_filter', 20, 3 );
+		$this->loader->add_filter( 'mwb_prfw_pro_upload_review', $p_plugin_public, 'add_video_review', 20, 3 );
+		
+		
 
 	}
 

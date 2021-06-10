@@ -170,7 +170,7 @@ class Proreview_Public {
 	public function mwb_save_data( $comment_id ){
 		$dynamic_fields = get_option( 'mwb_multiselect', array() );
 					$review_arr = array();
-					foreach( $dynamic_fields as $k => $val ) {
+					foreach ( $dynamic_fields as $k => $val ) {
 						if ( '' !== $val ) {
 							$v = str_replace( " ", "_", trim( $val ) );
 							$data = array_key_exists( $v, $_POST ) ? $_POST[ $v ] : '';
@@ -230,7 +230,7 @@ class Proreview_Public {
 		}
 	}
 	public function mwb_change_text_filter( $reviews_title, $count, $product ) {
-	
+
 		// var_dump( $review_title );
 		// echo '<pre>'; print_r( $count ); echo '</pre>';
 		// echo '<pre>'; print_r( $product ); echo '</pre>';
@@ -242,6 +242,11 @@ class Proreview_Public {
 			return $reviews_title;
 
 		}
+	}
+	public function add_video_review( $field ) {
+		
+		$field = '<label for="mwb_review_image">' .  esc_html__( 'Choose Image / Video to Upload', 'pro-reviews' ) . '</label><input type="file" id="mwb_review_image" name="mwb_review_image[]" multiple="multiple" accept="image/*,video/*" >';
+		return $field;
 	}
 
 }
